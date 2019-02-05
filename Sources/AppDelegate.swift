@@ -12,6 +12,8 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+
+        (NSDocumentController.shared as! DocumentController).cpu = cpu
         statusWindowController.showWindow(nil)
     }
 

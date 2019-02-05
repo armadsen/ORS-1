@@ -38,8 +38,18 @@ class Document: NSDocument {
 
     // MARK: - Properties
 
+    var cpu: CPU? {
+        didSet {
+            mainWindowController?.cpu = cpu
+        }
+    }
+
     @objc var assemblyProgram: String = ""
 
-    private var mainWindowController: MainDocumentWindowController!
+    private var mainWindowController: MainDocumentWindowController! {
+        didSet {
+            mainWindowController.cpu = cpu
+        }
+    }
 }
 

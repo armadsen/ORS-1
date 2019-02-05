@@ -23,6 +23,7 @@
 		9DE30B282209738C005AF2FC /* RegistersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE30B262209738C005AF2FC /* RegistersView.xib */; };
 		9DE30B2F220978A8005AF2FC /* CPUStatusWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B2D220978A8005AF2FC /* CPUStatusWindowController.swift */; };
 		9DE30B30220978A8005AF2FC /* CPUStatusWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE30B2E220978A8005AF2FC /* CPUStatusWindow.xib */; };
+		9DE30B33220A466F005AF2FC /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B32220A466F005AF2FC /* DocumentController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9DE30B262209738C005AF2FC /* RegistersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistersView.xib; sourceTree = "<group>"; };
 		9DE30B2D220978A8005AF2FC /* CPUStatusWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUStatusWindowController.swift; sourceTree = "<group>"; };
 		9DE30B2E220978A8005AF2FC /* CPUStatusWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPUStatusWindow.xib; sourceTree = "<group>"; };
+		9DE30B32220A466F005AF2FC /* DocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		9DE30B2C22097477005AF2FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9DE30B32220A466F005AF2FC /* DocumentController.swift */,
 				9DE30B042209369F005AF2FC /* Document.swift */,
 			);
 			path = Model;
@@ -229,6 +232,7 @@
 			files = (
 				9DE30B2422096E94005AF2FC /* Statement.swift in Sources */,
 				9DE30B2122096314005AF2FC /* Assembler.swift in Sources */,
+				9DE30B33220A466F005AF2FC /* DocumentController.swift in Sources */,
 				9DE30B052209369F005AF2FC /* Document.swift in Sources */,
 				9DE30B1B22095846005AF2FC /* Registers.swift in Sources */,
 				9DE30B1922095814005AF2FC /* CPU.swift in Sources */,

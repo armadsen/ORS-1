@@ -23,14 +23,37 @@ class MainDocumentWindowController: NSWindowController {
     }
 
     @IBAction func run(_ sender: Any) {
+        assembleProgram(sender)
+        cpu?.program = statements
+        do {
+            try cpu?.runUntilHalt()
+        } catch {
+            presentError(error)
+        }
+    }
 
+    @IBAction func reset(_ sender: Any) {
+        cpu?.reset()
     }
 
     @IBAction func step(_ sender: Any) {
+        do {
+            try cpu?.singleStep()
+        } catch {
+            printToConsole(string: "Error: \(error)")
+        }
+    }
 
+    // MARK: - Private
+
+    func printToConsole(string: String) {
+        consoleTextView.textStorage?.mutableString.append(string)
+        consoleTextView.textStorage?.mutableString.append("\n")
     }
 
     // MARK: - Properties
+
+    var cpu: CPU?
 
     @objc static func keyPathsForValuesAffectingAssemblyProgram() -> Set<String> {
         return ["document.assemblyProgram"]

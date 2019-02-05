@@ -27,13 +27,15 @@ class RegistersViewController: NSViewController, NSTableViewDataSource {
 
     // MARK: - Properties
 
-    @objc static func keyPathsForValuesAffectingallRegisterValues() -> Set<String> {
-        return Set(Register.allCases.map { "registers." + $0.name })
+    @objc static func keyPathsForValuesAffectingAllRegisterValues() -> Set<String> {
+        let result = Set(Register.allCases.map { "registers." + $0.name })
+        return result
     }
 
     @objc dynamic var allRegisterValues: [RegisterAndValue] {
         guard let registers = registers else { return [] }
-        return Register.allCases.map { RegisterAndValue(register: $0, value: registers[$0] )}
+        let result = Register.allCases.map { RegisterAndValue(register: $0, value: registers[$0] )}
+        return result
     }
 
     @objc dynamic var registers: Registers?

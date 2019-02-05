@@ -62,17 +62,23 @@ enum Register: Int, CaseIterable {
 }
 
 @objcMembers class Registers: NSObject {
-    var pc: Int = 0 // Program Counter
-    var sp: Int = 0 // Stack Pointer
+    dynamic var pc: Int = 0 // Program Counter
+    dynamic var sp: Int = 0 // Stack Pointer
     
-    var r0: Int = 0 // General purpose register
-    var r1: Int = 0 // General purpose register
-    var r2: Int = 0 // General purpose register
-    var r3: Int = 0 // General purpose register
-    var r4: Int = 0 // General purpose register
-    var r5: Int = 0 // General purpose register
-    var r6: Int = 0 // General purpose register
-    var r7: Int = 0 // General purpose register
+    dynamic var r0: Int = 0 // General purpose register
+    dynamic var r1: Int = 0 // General purpose register
+    dynamic var r2: Int = 0 // General purpose register
+    dynamic var r3: Int = 0 // General purpose register
+    dynamic var r4: Int = 0 // General purpose register
+    dynamic var r5: Int = 0 // General purpose register
+    dynamic var r6: Int = 0 // General purpose register
+    dynamic var r7: Int = 0 // General purpose register
+
+    func reset() {
+        for reg in Register.allCases {
+            self[reg] = 0
+        }
+    }
     
     subscript(register: Register) -> Int {
         get {
@@ -106,5 +112,13 @@ enum Register: Int, CaseIterable {
             case .r7: r7 = newValue
             }
         }
+    }
+
+    override var description: String {
+        var result = ""
+        for reg in Register.allCases {
+            result += "\(reg.name): \(self[reg])\n"
+        }
+        return result
     }
 }

@@ -14,12 +14,20 @@ class CPU {
         case badInstruction
     }
 
-    func run() throws {
-        registers.pc = 0
+    func reset() {
+        registers.reset()
+    }
+
+    func runUntilHalt() throws {
+        reset()
         var shouldContinue = true
         while shouldContinue {
             shouldContinue = try execute(statement: program[registers.pc])
         }
+    }
+
+    func singleStep() throws {
+        _ = try execute(statement: program[registers.pc])
     }
 
     // returns true if the program should continue

@@ -109,6 +109,8 @@ enum Instruction: Int {
         // Convenience
         case "prt": self = .prt
 
+        case "hlt": self = .hlt
+
         default: throw Err.unknownInstruction
         }
     }
