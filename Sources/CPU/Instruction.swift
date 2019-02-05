@@ -19,6 +19,7 @@ enum Instruction: Int {
     case ldr = 0x11 // Load relative, e.g. ldr r0 r1 -> r0 = mem[r1]
     case sta = 0x12 // Store absolute, e.g. sta r0 42 -> mem[r0] = 42
     case str = 0x13 // Store relative, e.g. str r0 r1 -> mem[r0] = r1
+    // TODO: Add transfer to move between registers
 
     // Arithmetic
     case ada = 0x20 // Add absolute, e.g. ada r0 42 -> r0 = r0 + 42
@@ -58,6 +59,9 @@ enum Instruction: Int {
 
     // Convenience
     case prt = 0x70 // Print, e.g. prt r0 -> print(r0)
+
+    // Control
+    case hlt = 0xEE // Halt program
 
     init(mnemonic: String) throws {
         switch mnemonic {
