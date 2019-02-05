@@ -9,5 +9,8 @@
 import Foundation
 
 class CPU {
+    var registers = Registers()
 
+    var program: [Statement] = []
+    var memory = [Int](repeating: 0, count: 1024)
 }

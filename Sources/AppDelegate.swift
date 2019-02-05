@@ -11,16 +11,15 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        statusWindowController.showWindow(nil)
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
+    private var cpu = CPU()
 
-
+    lazy var statusWindowController: CPUStatusWindowController = {
+        return CPUStatusWindowController(cpu: cpu)
+    }()
+    
 }
 

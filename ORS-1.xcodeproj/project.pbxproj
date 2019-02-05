@@ -19,6 +19,10 @@
 		9DE30B1F22095A66005AF2FC /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B1E22095A66005AF2FC /* Instruction.swift */; };
 		9DE30B2122096314005AF2FC /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B2022096314005AF2FC /* Assembler.swift */; };
 		9DE30B2422096E94005AF2FC /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B2322096E94005AF2FC /* Statement.swift */; };
+		9DE30B272209738C005AF2FC /* RegistersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B252209738C005AF2FC /* RegistersViewController.swift */; };
+		9DE30B282209738C005AF2FC /* RegistersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE30B262209738C005AF2FC /* RegistersView.xib */; };
+		9DE30B2F220978A8005AF2FC /* CPUStatusWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B2D220978A8005AF2FC /* CPUStatusWindowController.swift */; };
+		9DE30B30220978A8005AF2FC /* CPUStatusWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE30B2E220978A8005AF2FC /* CPUStatusWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		9DE30B2022096314005AF2FC /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		9DE30B222209685C005AF2FC /* ORS-1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ORS-1.entitlements"; sourceTree = "<group>"; };
 		9DE30B2322096E94005AF2FC /* Statement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
+		9DE30B252209738C005AF2FC /* RegistersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistersViewController.swift; sourceTree = "<group>"; };
+		9DE30B262209738C005AF2FC /* RegistersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistersView.xib; sourceTree = "<group>"; };
+		9DE30B2D220978A8005AF2FC /* CPUStatusWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUStatusWindowController.swift; sourceTree = "<group>"; };
+		9DE30B2E220978A8005AF2FC /* CPUStatusWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPUStatusWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,14 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				9DE30B022209369F005AF2FC /* AppDelegate.swift */,
-				9DE30B16220936EF005AF2FC /* MainDocumentWindowController.swift */,
-				9DE30B042209369F005AF2FC /* Document.swift */,
-				9DE30B1822095814005AF2FC /* CPU.swift */,
-				9DE30B1A22095846005AF2FC /* Registers.swift */,
-				9DE30B1C22095A17005AF2FC /* Flags.swift */,
-				9DE30B1E22095A66005AF2FC /* Instruction.swift */,
-				9DE30B2322096E94005AF2FC /* Statement.swift */,
-				9DE30B2022096314005AF2FC /* Assembler.swift */,
+				9DE30B2C22097477005AF2FC /* Model */,
+				9DE30B292209745B005AF2FC /* UI Controllers */,
+				9DE30B2A2209746C005AF2FC /* CPU */,
+				9DE30B2B22097470005AF2FC /* Assembler */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -88,13 +92,61 @@
 		9DE30B15220936AD005AF2FC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9DE30B062209369F005AF2FC /* Document.xib */,
+				9DE30B31220978AE005AF2FC /* XIBs */,
 				9DE30B09220936A0005AF2FC /* Assets.xcassets */,
-				9DE30B0B220936A0005AF2FC /* MainMenu.xib */,
 				9DE30B0E220936A0005AF2FC /* Info.plist */,
 				9DE30B0F220936A0005AF2FC /* ORS_1.entitlements */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9DE30B292209745B005AF2FC /* UI Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9DE30B16220936EF005AF2FC /* MainDocumentWindowController.swift */,
+				9DE30B252209738C005AF2FC /* RegistersViewController.swift */,
+				9DE30B2D220978A8005AF2FC /* CPUStatusWindowController.swift */,
+			);
+			path = "UI Controllers";
+			sourceTree = "<group>";
+		};
+		9DE30B2A2209746C005AF2FC /* CPU */ = {
+			isa = PBXGroup;
+			children = (
+				9DE30B1822095814005AF2FC /* CPU.swift */,
+				9DE30B1A22095846005AF2FC /* Registers.swift */,
+				9DE30B1C22095A17005AF2FC /* Flags.swift */,
+				9DE30B1E22095A66005AF2FC /* Instruction.swift */,
+			);
+			path = CPU;
+			sourceTree = "<group>";
+		};
+		9DE30B2B22097470005AF2FC /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				9DE30B2322096E94005AF2FC /* Statement.swift */,
+				9DE30B2022096314005AF2FC /* Assembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		9DE30B2C22097477005AF2FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DE30B042209369F005AF2FC /* Document.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9DE30B31220978AE005AF2FC /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				9DE30B0B220936A0005AF2FC /* MainMenu.xib */,
+				9DE30B062209369F005AF2FC /* Document.xib */,
+				9DE30B2E220978A8005AF2FC /* CPUStatusWindow.xib */,
+				9DE30B262209738C005AF2FC /* RegistersView.xib */,
+			);
+			path = XIBs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +214,9 @@
 			files = (
 				9DE30B0A220936A0005AF2FC /* Assets.xcassets in Resources */,
 				9DE30B082209369F005AF2FC /* Document.xib in Resources */,
+				9DE30B30220978A8005AF2FC /* CPUStatusWindow.xib in Resources */,
 				9DE30B0D220936A0005AF2FC /* MainMenu.xib in Resources */,
+				9DE30B282209738C005AF2FC /* RegistersView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,10 +232,12 @@
 				9DE30B052209369F005AF2FC /* Document.swift in Sources */,
 				9DE30B1B22095846005AF2FC /* Registers.swift in Sources */,
 				9DE30B1922095814005AF2FC /* CPU.swift in Sources */,
+				9DE30B2F220978A8005AF2FC /* CPUStatusWindowController.swift in Sources */,
 				9DE30B1F22095A66005AF2FC /* Instruction.swift in Sources */,
 				9DE30B1D22095A17005AF2FC /* Flags.swift in Sources */,
 				9DE30B17220936EF005AF2FC /* MainDocumentWindowController.swift in Sources */,
 				9DE30B032209369F005AF2FC /* AppDelegate.swift in Sources */,
+				9DE30B272209738C005AF2FC /* RegistersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

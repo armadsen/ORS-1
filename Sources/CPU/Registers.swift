@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Register: Int {
+enum Register: Int, CaseIterable {
     
     enum Err: Error {
         case unknownRegister
@@ -43,9 +43,25 @@ enum Register: Int {
         default: throw Err.unknownRegister
         }
     }
+    
+    var name: String {
+        switch self {
+        case .pc: return "pc"
+        case .sp: return "sp"
+            
+        case .r0: return "r0"
+        case .r1: return "r1"
+        case .r2: return "r2"
+        case .r3: return "r3"
+        case .r4: return "r4"
+        case .r5: return "r5"
+        case .r6: return "r6"
+        case .r7: return "r7"
+        }
+    }
 }
 
-struct Registers {
+@objcMembers class Registers: NSObject {
     var pc: Int = 0 // Program Counter
     var sp: Int = 0 // Stack Pointer
     
