@@ -13,6 +13,12 @@
 		9DE30B0A220936A0005AF2FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DE30B09220936A0005AF2FC /* Assets.xcassets */; };
 		9DE30B0D220936A0005AF2FC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE30B0B220936A0005AF2FC /* MainMenu.xib */; };
 		9DE30B17220936EF005AF2FC /* MainDocumentWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B16220936EF005AF2FC /* MainDocumentWindowController.swift */; };
+		9DE30B1922095814005AF2FC /* CPU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B1822095814005AF2FC /* CPU.swift */; };
+		9DE30B1B22095846005AF2FC /* Registers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B1A22095846005AF2FC /* Registers.swift */; };
+		9DE30B1D22095A17005AF2FC /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B1C22095A17005AF2FC /* Flags.swift */; };
+		9DE30B1F22095A66005AF2FC /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B1E22095A66005AF2FC /* Instruction.swift */; };
+		9DE30B2122096314005AF2FC /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B2022096314005AF2FC /* Assembler.swift */; };
+		9DE30B2422096E94005AF2FC /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B2322096E94005AF2FC /* Statement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +31,13 @@
 		9DE30B0E220936A0005AF2FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DE30B0F220936A0005AF2FC /* ORS_1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ORS_1.entitlements; sourceTree = "<group>"; };
 		9DE30B16220936EF005AF2FC /* MainDocumentWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDocumentWindowController.swift; sourceTree = "<group>"; };
+		9DE30B1822095814005AF2FC /* CPU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPU.swift; sourceTree = "<group>"; };
+		9DE30B1A22095846005AF2FC /* Registers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registers.swift; sourceTree = "<group>"; };
+		9DE30B1C22095A17005AF2FC /* Flags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
+		9DE30B1E22095A66005AF2FC /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
+		9DE30B2022096314005AF2FC /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
+		9DE30B222209685C005AF2FC /* ORS-1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ORS-1.entitlements"; sourceTree = "<group>"; };
+		9DE30B2322096E94005AF2FC /* Statement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +54,7 @@
 		9DE30AF62209369F005AF2FC = {
 			isa = PBXGroup;
 			children = (
+				9DE30B222209685C005AF2FC /* ORS-1.entitlements */,
 				9DE30B012209369F005AF2FC /* Sources */,
 				9DE30B15220936AD005AF2FC /* Resources */,
 				9DE30B002209369F005AF2FC /* Products */,
@@ -61,6 +75,12 @@
 				9DE30B022209369F005AF2FC /* AppDelegate.swift */,
 				9DE30B16220936EF005AF2FC /* MainDocumentWindowController.swift */,
 				9DE30B042209369F005AF2FC /* Document.swift */,
+				9DE30B1822095814005AF2FC /* CPU.swift */,
+				9DE30B1A22095846005AF2FC /* Registers.swift */,
+				9DE30B1C22095A17005AF2FC /* Flags.swift */,
+				9DE30B1E22095A66005AF2FC /* Instruction.swift */,
+				9DE30B2322096E94005AF2FC /* Statement.swift */,
+				9DE30B2022096314005AF2FC /* Assembler.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -105,10 +125,15 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "Lambda School";
+				ORGANIZATIONNAME = "Open Reel Software";
 				TargetAttributes = {
 					9DE30AFE2209369F005AF2FC = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -148,7 +173,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE30B2422096E94005AF2FC /* Statement.swift in Sources */,
+				9DE30B2122096314005AF2FC /* Assembler.swift in Sources */,
 				9DE30B052209369F005AF2FC /* Document.swift in Sources */,
+				9DE30B1B22095846005AF2FC /* Registers.swift in Sources */,
+				9DE30B1922095814005AF2FC /* CPU.swift in Sources */,
+				9DE30B1F22095A66005AF2FC /* Instruction.swift in Sources */,
+				9DE30B1D22095A17005AF2FC /* Flags.swift in Sources */,
 				9DE30B17220936EF005AF2FC /* MainDocumentWindowController.swift in Sources */,
 				9DE30B032209369F005AF2FC /* AppDelegate.swift in Sources */,
 			);
@@ -295,7 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Resources/ORS_1.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "ORS-1.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2CX7W99FJ9;
@@ -314,7 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Resources/ORS_1.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "ORS-1.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2CX7W99FJ9;

@@ -23,7 +23,7 @@
             <value key="minSize" type="size" width="94" height="86"/>
             <view key="contentView" wantsLayer="YES" id="gIp-Ho-8D9">
                 <rect key="frame" x="0.0" y="0.0" width="735" height="713"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" translatesAutoresizingMaskIntoConstraints="NO" id="w0C-TW-2Ce">
                         <rect key="frame" x="0.0" y="0.0" width="735" height="713"/>
@@ -53,6 +53,13 @@
                                                                     <size key="minSize" width="350" height="344"/>
                                                                     <size key="maxSize" width="350" height="10000000"/>
                                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <connections>
+                                                                        <binding destination="-2" name="value" keyPath="assemblyProgram" id="dA1-xo-7pJ">
+                                                                            <dictionary key="options">
+                                                                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                                            </dictionary>
+                                                                        </binding>
+                                                                    </connections>
                                                                 </textView>
                                                             </subviews>
                                                         </clipView>
@@ -79,7 +86,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="345" height="344"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" smartInsertDelete="YES" id="tEi-Bm-EFi">
+                                                                <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" smartInsertDelete="YES" id="tEi-Bm-EFi">
                                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="344"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -87,6 +94,9 @@
                                                                     <size key="minSize" width="345" height="344"/>
                                                                     <size key="maxSize" width="345" height="10000000"/>
                                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <connections>
+                                                                        <binding destination="-2" name="value" keyPath="assembledProgram" id="2Rc-zF-mnq"/>
+                                                                    </connections>
                                                                 </textView>
                                                             </subviews>
                                                         </clipView>
@@ -173,13 +183,27 @@
                     <toolbarItem implicitItemIdentifier="AC24D65D-67D4-4863-96F2-80B6F1C75B6F" label="Run" paletteLabel="Run" tag="-1" image="Run" id="BWw-81-55R">
                         <size key="minSize" width="28" height="28"/>
                         <size key="maxSize" width="28" height="28"/>
+                        <connections>
+                            <action selector="assembleProgram:" target="-2" id="1Na-ZT-i39"/>
+                        </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="DAC40B17-56FC-4FE0-947E-31CC9809995A" label="Step" paletteLabel="Step" tag="-1" image="Step" id="qoi-DB-dR5">
                         <size key="minSize" width="24" height="22"/>
                         <size key="maxSize" width="24" height="22"/>
+                        <connections>
+                            <action selector="assembleProgram:" target="-2" id="1v3-nA-YHn"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="7CEF4F11-8A05-4050-914E-0923CC2ED703" label="Assemble" paletteLabel="Assemble" tag="-1" image="Assemble" id="G6v-8M-546">
+                        <size key="minSize" width="28" height="28"/>
+                        <size key="maxSize" width="28" height="28"/>
+                        <connections>
+                            <action selector="assembleProgram:" target="-2" id="NYC-0H-Yki"/>
+                        </connections>
                     </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
+                    <toolbarItem reference="G6v-8M-546"/>
                     <toolbarItem reference="BWw-81-55R"/>
                     <toolbarItem reference="TT2-vn-j1X"/>
                     <toolbarItem reference="qoi-DB-dR5"/>
@@ -193,6 +217,7 @@
         </window>
     </objects>
     <resources>
+        <image name="Assemble" width="28" height="28"/>
         <image name="Run" width="28" height="28"/>
         <image name="Step" width="24" height="22"/>
     </resources>
