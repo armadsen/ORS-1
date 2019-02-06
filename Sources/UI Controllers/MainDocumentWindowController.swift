@@ -60,7 +60,13 @@ class MainDocumentWindowController: NSWindowController {
 
     // MARK: - Properties
 
-    var cpu: CPU?
+    var cpu: CPU? {
+        didSet {
+            cpu?.printHandler = { [weak self] string in
+                self?.consoleTextView.textStorage?.mutableString.append(string)
+            }
+        }
+    }
 
     @objc static func keyPathsForValuesAffectingAssemblyProgram() -> Set<String> {
         return ["document.assemblyProgram"]

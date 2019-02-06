@@ -58,7 +58,10 @@ enum Instruction: Int {
     case woz = 0x65 // Write 0 to zero e.g. woz -> zero = false
 
     // Convenience
-    case prt = 0x70 // Print, e.g. prt r0 -> print(r0)
+    case pta = 0x70 // Print absolute, e.g. pta 42 -> print(42)
+    case ptc = 0x71 // Print absolute ASCII value, e.g. ptc 42 -> print('42')
+    case ptr = 0x72 // Print relative, e.g. ptr r0 -> print(r0)
+    case ptk = 0x73 // Print relative ASCII value, e.g. ptr r0 -> ptc *r0
 
     // Control
     case hlt = 0xEE // Halt program
@@ -107,7 +110,10 @@ enum Instruction: Int {
         case "woz": self = .woz
 
         // Convenience
-        case "prt": self = .prt
+        case "pta": self = .pta
+        case "ptc": self = .ptc
+        case "ptr": self = .ptr
+        case "ptk": self = .ptk
 
         case "hlt": self = .hlt
 
