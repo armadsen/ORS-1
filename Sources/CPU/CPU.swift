@@ -16,6 +16,7 @@ class CPU {
 
     func reset() {
         registers.reset()
+        flags.reset()
     }
 
     func runUntilHalt() throws {
@@ -39,21 +40,27 @@ class CPU {
             guard case let .register(destReg) = statement.arguments[0] else { throw Err.badInstruction }
             guard case let .absolute(value) = statement.arguments[1] else { throw Err.badInstruction }
             registers[destReg] = value
+            flags.zero = value == 0
         case .ldr:
             guard statement.arguments.count == 2 else { throw Err.badInstruction }
             guard case let .register(destReg) = statement.arguments[0] else { throw Err.badInstruction }
             guard case let .register(srcReg) = statement.arguments[1] else { throw Err.badInstruction }
-            registers[destReg] = memory[registers[srcReg]]
+            let value = memory[registers[srcReg]]
+            registers[destReg] = value
+            flags.zero = value == 0
         case .sta:
             guard statement.arguments.count == 2 else { throw Err.badInstruction }
             guard case let .register(destReg) = statement.arguments[0] else { throw Err.badInstruction }
             guard case let .absolute(value) = statement.arguments[1] else { throw Err.badInstruction }
             memory[registers[destReg]] = value
+            flags.zero = value == 0
         case .str:
             guard statement.arguments.count == 2 else { throw Err.badInstruction }
             guard case let .register(destReg) = statement.arguments[0] else { throw Err.badInstruction }
             guard case let .register(srcReg) = statement.arguments[1] else { throw Err.badInstruction }
-            memory[registers[destReg]] = memory[registers[srcReg]]
+            let value = memory[registers[srcReg]]
+            memory[registers[destReg]] = value
+            flags.zero = value == 0
 
         // Arithmetic
         case .ada:
@@ -61,21 +68,25 @@ class CPU {
             guard case let .register(destReg) = statement.arguments[0] else { throw Err.badInstruction }
             guard case let .absolute(value) = statement.arguments[1] else { throw Err.badInstruction }
             registers[destReg] += value
+            flags.zero = registers[destReg] == 0
         case .adr:
             guard statement.arguments.count == 2 else { throw Err.badInstruction }
             guard case let .register(destReg) = statement.arguments[0] else { throw Err.badInstruction }
             guard case let .register(srcReg) = statement.arguments[1] else { throw Err.badInstruction }
             registers[destReg] += registers[srcReg]
+            flags.zero = registers[destReg] == 0
         case .sba:
             guard statement.arguments.count == 2 else { throw Err.badInstruction }
             guard case let .register(destReg) = statement.arguments[0] else { throw Err.badInstruction }
             guard case let .absolute(value) = statement.arguments[1] else { throw Err.badInstruction }
             registers[destReg] -= value
+            flags.zero = registers[destReg] == 0
         case .sbr:
             guard statement.arguments.count == 2 else { throw Err.badInstruction }
             guard case let .register(destReg) = statement.arguments[0] else { throw Err.badInstruction }
             guard case let .register(srcReg) = statement.arguments[1] else { throw Err.badInstruction }
             registers[destReg] -= registers[srcReg]
+            flags.zero = registers[destReg] == 0
 
         // Logic
         case .ana:
@@ -83,36 +94,42 @@ class CPU {
             guard case let .register(destReg) = statement.arguments[0] else { throw Err.badInstruction }
             guard case let .absolute(value) = statement.arguments[1] else { throw Err.badInstruction }
             registers[destReg] &= value
+            flags.zero = registers[destReg] == 0
 
         case .anr:
             guard statement.arguments.count == 2 else { throw Err.badInstruction }
             guard case let .register(destReg) = statement.arguments[0] else { throw Err.badInstruction }
             guard case let .register(srcReg) = statement.arguments[1] else { throw Err.badInstruction }
             registers[destReg] &= registers[srcReg]
+            flags.zero = registers[destReg] == 0
 
         case .ora:
             guard statement.arguments.count == 2 else { throw Err.badInstruction }
             guard case let .register(destReg) = statement.arguments[0] else { throw Err.badInstruction }
             guard case let .absolute(value) = statement.arguments[1] else { throw Err.badInstruction }
             registers[destReg] |= value
+            flags.zero = registers[destReg] == 0
 
         case .orr:
             guard statement.arguments.count == 2 else { throw Err.badInstruction }
             guard case let .register(destReg) = statement.arguments[0] else { throw Err.badInstruction }
             guard case let .register(srcReg) = statement.arguments[1] else { throw Err.badInstruction }
             registers[destReg] |= registers[srcReg]
+            flags.zero = registers[destReg] == 0
 
         case .xra:
             guard statement.arguments.count == 2 else { throw Err.badInstruction }
             guard case let .register(destReg) = statement.arguments[0] else { throw Err.badInstruction }
             guard case let .absolute(value) = statement.arguments[1] else { throw Err.badInstruction }
             registers[destReg] ^= value
+            flags.zero = registers[destReg] == 0
 
         case .xrr:
             guard statement.arguments.count == 2 else { throw Err.badInstruction }
             guard case let .register(destReg) = statement.arguments[0] else { throw Err.badInstruction }
             guard case let .register(srcReg) = statement.arguments[1] else { throw Err.badInstruction }
             registers[destReg] ^= registers[srcReg]
+            flags.zero = registers[destReg] == 0
 
 
         // Compare
@@ -224,8 +241,8 @@ class CPU {
         return true
     }
 
-    var registers = Registers()
-    private(set) var flags = Flags()
+    let registers = Registers()
+    let flags = Flags()
 
     var program: [Statement] = []
     var memory = [Int](repeating: 0, count: 1024)

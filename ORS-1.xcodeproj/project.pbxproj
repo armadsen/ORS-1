@@ -24,6 +24,8 @@
 		9DE30B2F220978A8005AF2FC /* CPUStatusWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B2D220978A8005AF2FC /* CPUStatusWindowController.swift */; };
 		9DE30B30220978A8005AF2FC /* CPUStatusWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE30B2E220978A8005AF2FC /* CPUStatusWindow.xib */; };
 		9DE30B33220A466F005AF2FC /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B32220A466F005AF2FC /* DocumentController.swift */; };
+		9DE30B36220A52ED005AF2FC /* FlagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B34220A52ED005AF2FC /* FlagsViewController.swift */; };
+		9DE30B39220A5311005AF2FC /* FlagsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE30B38220A5311005AF2FC /* FlagsView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		9DE30B2D220978A8005AF2FC /* CPUStatusWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUStatusWindowController.swift; sourceTree = "<group>"; };
 		9DE30B2E220978A8005AF2FC /* CPUStatusWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPUStatusWindow.xib; sourceTree = "<group>"; };
 		9DE30B32220A466F005AF2FC /* DocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
+		9DE30B34220A52ED005AF2FC /* FlagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsViewController.swift; sourceTree = "<group>"; };
+		9DE30B38220A5311005AF2FC /* FlagsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlagsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				9DE30B16220936EF005AF2FC /* MainDocumentWindowController.swift */,
-				9DE30B252209738C005AF2FC /* RegistersViewController.swift */,
 				9DE30B2D220978A8005AF2FC /* CPUStatusWindowController.swift */,
+				9DE30B252209738C005AF2FC /* RegistersViewController.swift */,
+				9DE30B34220A52ED005AF2FC /* FlagsViewController.swift */,
 			);
 			path = "UI Controllers";
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 				9DE30B062209369F005AF2FC /* Document.xib */,
 				9DE30B2E220978A8005AF2FC /* CPUStatusWindow.xib */,
 				9DE30B262209738C005AF2FC /* RegistersView.xib */,
+				9DE30B38220A5311005AF2FC /* FlagsView.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -215,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE30B39220A5311005AF2FC /* FlagsView.xib in Resources */,
 				9DE30B0A220936A0005AF2FC /* Assets.xcassets in Resources */,
 				9DE30B082209369F005AF2FC /* Document.xib in Resources */,
 				9DE30B30220978A8005AF2FC /* CPUStatusWindow.xib in Resources */,
@@ -235,6 +242,7 @@
 				9DE30B33220A466F005AF2FC /* DocumentController.swift in Sources */,
 				9DE30B052209369F005AF2FC /* Document.swift in Sources */,
 				9DE30B1B22095846005AF2FC /* Registers.swift in Sources */,
+				9DE30B36220A52ED005AF2FC /* FlagsViewController.swift in Sources */,
 				9DE30B1922095814005AF2FC /* CPU.swift in Sources */,
 				9DE30B2F220978A8005AF2FC /* CPUStatusWindowController.swift in Sources */,
 				9DE30B1F22095A66005AF2FC /* Instruction.swift in Sources */,

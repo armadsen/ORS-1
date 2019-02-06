@@ -17,7 +17,7 @@ import Cocoa
     @objc dynamic var value: Int
 }
 
-class RegistersViewController: NSViewController, NSTableViewDataSource {
+class RegistersViewController: NSViewController {
 
     convenience init() {
         self.init(nibName: "RegistersView", bundle: nil)

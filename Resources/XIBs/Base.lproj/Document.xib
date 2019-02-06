@@ -202,8 +202,8 @@
                         </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="07FDBFFF-59DC-4D7B-A189-E40A4B7F40F8" label="Reset" paletteLabel="Reset" tag="-1" image="Reset" id="5xF-xI-4h1">
-                        <size key="minSize" width="29" height="26"/>
-                        <size key="maxSize" width="29" height="26"/>
+                        <size key="minSize" width="29" height="29"/>
+                        <size key="maxSize" width="29" height="29"/>
                         <connections>
                             <action selector="reset:" target="-2" id="DZ5-XG-lcJ"/>
                         </connections>
@@ -226,8 +226,8 @@
     </objects>
     <resources>
         <image name="Assemble" width="28" height="28"/>
-        <image name="Reset" width="29" height="26"/>
+        <image name="Reset" width="29" height="29"/>
         <image name="Run" width="28" height="28"/>
-        <image name="Step" width="24" height="22"/>
+        <image name="Step" width="24" height="24"/>
     </resources>
 </document>

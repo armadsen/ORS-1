@@ -8,8 +8,17 @@
 
 import Foundation
 
-struct Flags {
-    var negative: Bool = false
-    var carry: Bool = false
-    var zero: Bool = false
+@objcMembers class Flags: NSObject {
+
+    dynamic var negative: Bool = false
+    dynamic var carry: Bool = false
+    dynamic var zero: Bool = false
+
+    func reset() {
+        for key in Flags.allKeys {
+            self[keyPath: key] = false
+        }
+    }
+
+    static let allKeys = [\Flags.negative, \Flags.carry, \Flags.zero]
 }
