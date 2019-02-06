@@ -163,44 +163,44 @@ class CPU {
             return true
         case .joc:
             guard statement.arguments.count == 1 else { throw Err.badInstruction(statement) }
-            guard case let .absolute(value) = statement.arguments[0] else { throw Err.badInstruction(statement) }
+            guard case let .register(srcReg) = statement.arguments[0] else { throw Err.badInstruction(statement) }
             if flags.carry {
-                registers.pc = value
+                registers.pc = registers[srcReg]
                 return true
             }
         case .jnc:
             guard statement.arguments.count == 1 else { throw Err.badInstruction(statement) }
-            guard case let .absolute(value) = statement.arguments[0] else { throw Err.badInstruction(statement) }
+            guard case let .register(srcReg) = statement.arguments[0] else { throw Err.badInstruction(statement) }
             if !flags.carry {
-                registers.pc = value
+                registers.pc = registers[srcReg]
                 return true
             }
         case .joz:
             guard statement.arguments.count == 1 else { throw Err.badInstruction(statement) }
-            guard case let .absolute(value) = statement.arguments[0] else { throw Err.badInstruction(statement) }
+            guard case let .register(srcReg) = statement.arguments[0] else { throw Err.badInstruction(statement) }
             if flags.zero {
-                registers.pc = value
+                registers.pc = registers[srcReg]
                 return true
             }
         case .jnz:
             guard statement.arguments.count == 1 else { throw Err.badInstruction(statement) }
-            guard case let .absolute(value) = statement.arguments[0] else { throw Err.badInstruction(statement) }
+            guard case let .register(srcReg) = statement.arguments[0] else { throw Err.badInstruction(statement) }
             if !flags.zero {
-                registers.pc = value
+                registers.pc = registers[srcReg]
                 return true
             }
         case .jon:
             guard statement.arguments.count == 1 else { throw Err.badInstruction(statement) }
-            guard case let .absolute(value) = statement.arguments[0] else { throw Err.badInstruction(statement) }
+            guard case let .register(srcReg) = statement.arguments[0] else { throw Err.badInstruction(statement) }
             if flags.negative {
-                registers.pc = value
+                registers.pc = registers[srcReg]
                 return true
             }
         case .jnn:
             guard statement.arguments.count == 1 else { throw Err.badInstruction(statement) }
-            guard case let .absolute(value) = statement.arguments[0] else { throw Err.badInstruction(statement) }
+            guard case let .register(srcReg) = statement.arguments[0] else { throw Err.badInstruction(statement) }
             if !flags.negative {
-                registers.pc = value
+                registers.pc = registers[srcReg]
                 return true
             }
 
@@ -249,7 +249,8 @@ class CPU {
             printHandler?(String(c))
 
         // Control
-
+        case .nop:
+            break
         case .hlt:
             return false
         }

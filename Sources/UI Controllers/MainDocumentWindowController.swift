@@ -24,14 +24,15 @@ class MainDocumentWindowController: NSWindowController {
     @IBAction func assembleProgram(_ sender: Any) {
         do {
             statements = try assemble(string: assemblyProgram)
+            cpu?.program = statements
         } catch {
             presentError(error)
         }
     }
 
     @IBAction func run(_ sender: Any) {
+        clearConsole()
         assembleProgram(sender)
-        cpu?.program = statements
         do {
             try cpu?.runUntilHalt()
         } catch {
@@ -41,6 +42,7 @@ class MainDocumentWindowController: NSWindowController {
 
     @IBAction func reset(_ sender: Any) {
         cpu?.reset()
+        clearConsole()
     }
 
     @IBAction func step(_ sender: Any) {
@@ -56,6 +58,10 @@ class MainDocumentWindowController: NSWindowController {
     func printToConsole(string: String) {
         consoleTextView.textStorage?.mutableString.append(string)
         consoleTextView.textStorage?.mutableString.append("\n")
+    }
+
+    func clearConsole() {
+        consoleTextView.string = ""
     }
 
     // MARK: - Properties

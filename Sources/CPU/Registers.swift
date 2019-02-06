@@ -16,6 +16,10 @@ enum Register: Int, CaseIterable {
     
     case pc = 0xf08
     case sp = 0xf09
+
+    case a = 0xf0a
+    case b = 0xf0b
+    case c = 0xf0c
     
     case r0 = 0xf00
     case r1 = 0xf01
@@ -31,7 +35,11 @@ enum Register: Int, CaseIterable {
         switch string {
         case "pc": self = .pc
         case "sp": self = .sp
-            
+
+        case "a": self = .a
+        case "b": self = .b
+        case "c": self = .c
+
         case "r0": self = .r0
         case "r1": self = .r1
         case "r2": self = .r2
@@ -48,6 +56,10 @@ enum Register: Int, CaseIterable {
         switch self {
         case .pc: return "pc"
         case .sp: return "sp"
+
+        case .a: return "a"
+        case .b: return "b"
+        case .c: return "c"
             
         case .r0: return "r0"
         case .r1: return "r1"
@@ -64,7 +76,11 @@ enum Register: Int, CaseIterable {
 @objcMembers class Registers: NSObject {
     dynamic var pc: Int = 0 // Program Counter
     dynamic var sp: Int = 0 // Stack Pointer
-    
+
+    dynamic var a: Int = 0
+    dynamic var b: Int = 0
+    dynamic var c: Int = 0
+
     dynamic var r0: Int = 0 // General purpose register
     dynamic var r1: Int = 0 // General purpose register
     dynamic var r2: Int = 0 // General purpose register
@@ -85,6 +101,10 @@ enum Register: Int, CaseIterable {
             switch register {
             case .pc: return pc
             case .sp: return sp
+
+            case .a: return a
+            case .b: return b
+            case .c: return c
                 
             case .r0: return r0
             case .r1: return r1
@@ -101,6 +121,10 @@ enum Register: Int, CaseIterable {
             switch register {
             case .pc: pc = newValue
             case .sp: sp = newValue
+
+            case .a: a = newValue
+            case .b: b = newValue
+            case .c: c = newValue
                 
             case .r0: r0 = newValue
             case .r1: r1 = newValue

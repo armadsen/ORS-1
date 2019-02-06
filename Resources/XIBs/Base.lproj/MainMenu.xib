@@ -351,7 +351,7 @@
                                     <action selector="assembleProgram:" target="-1" id="JHP-XK-gqh"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Run" keyEquivalent="t" id="UDh-p4-wvG">
+                            <menuItem title="Run" keyEquivalent="5" id="UDh-p4-wvG">
                                 <connections>
                                     <action selector="run:" target="-1" id="AsU-ww-9e8"/>
                                 </connections>

@@ -42,12 +42,12 @@ enum Instruction: Int {
     // Branch
     case jpa = 0x50 // Jump absolute, e.g. jpa 42 -> pc = 42
     case jpr = 0x51 // Jump relative, e.g. jpa r0 -> pc = r0
-    case joc = 0x52 // Jump if carry is true, e.g. joc 42 -> if carry { pc += 42 }
-    case jnc = 0x53 // Jump if carry is false, e.g. jcz 42 -> if !carry { pc += 42 }
-    case joz = 0x54 // Jump if last result is zero, e.g. joz 42 -> if zero { pc += 42 }
-    case jnz = 0x55 // Jump if last result not zero, e.g. jnz 42 -> if !zero { pc += 42 }
-    case jon = 0x56 // Jump if last result negative, e.g. jon 42 -> if negative { pc += 42 }
-    case jnn = 0x57 // Jump if last result not negative, e.g. jnz 42 -> if !negative { pc += 42 }
+    case joc = 0x52 // Jump if carry is true, e.g. joc r0 -> if carry { pc += r0 }
+    case jnc = 0x53 // Jump if carry is false, e.g. jcz r0 -> if !carry { pc += r0 }
+    case joz = 0x54 // Jump if last result is zero, e.g. joz r0 -> if zero { pc += r0 }
+    case jnz = 0x55 // Jump if last result not zero, e.g. jnz r0 -> if !zero { pc += r0 }
+    case jon = 0x56 // Jump if last result negative, e.g. jon r0 -> if negative { pc += r0 }
+    case jnn = 0x57 // Jump if last result not negative, e.g. jnz r0 -> if !negative { pc += r0 }
 
     // Flags
     case win = 0x60 // Write 1 to negative, e.g. win -> negative = true
@@ -64,6 +64,7 @@ enum Instruction: Int {
     case ptk = 0x73 // Print relative ASCII value, e.g. ptr r0 -> ptc *r0
 
     // Control
+    case nop = 0xE0 // No-op
     case hlt = 0xEE // Halt program
 
     init(mnemonic: String) throws {
@@ -115,6 +116,7 @@ enum Instruction: Int {
         case "ptr": self = .ptr
         case "ptk": self = .ptk
 
+        case "nop": self = .nop
         case "hlt": self = .hlt
 
         default: throw Err.unknownInstruction
