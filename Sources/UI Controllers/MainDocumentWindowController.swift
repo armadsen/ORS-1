@@ -14,6 +14,13 @@ class MainDocumentWindowController: NSWindowController {
         self.init(windowNibName: "Document")
     }
 
+    override func windowDidLoad() {
+        super.windowDidLoad()
+
+        assemblyTextView.lnv_setUpLineNumberView()
+        machineCodeTextView.lnv_setUpLineNumberView()
+    }
+
     @IBAction func assembleProgram(_ sender: Any) {
         do {
             statements = try assemble(string: assemblyProgram)

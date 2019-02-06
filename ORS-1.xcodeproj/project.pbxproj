@@ -26,6 +26,7 @@
 		9DE30B33220A466F005AF2FC /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B32220A466F005AF2FC /* DocumentController.swift */; };
 		9DE30B36220A52ED005AF2FC /* FlagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B34220A52ED005AF2FC /* FlagsViewController.swift */; };
 		9DE30B39220A5311005AF2FC /* FlagsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE30B38220A5311005AF2FC /* FlagsView.xib */; };
+		9DE30B3C220A5BD3005AF2FC /* LineNumberRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE30B3B220A5BD3005AF2FC /* LineNumberRulerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		9DE30B32220A466F005AF2FC /* DocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
 		9DE30B34220A52ED005AF2FC /* FlagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsViewController.swift; sourceTree = "<group>"; };
 		9DE30B38220A5311005AF2FC /* FlagsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlagsView.xib; sourceTree = "<group>"; };
+		9DE30B3B220A5BD3005AF2FC /* LineNumberRulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineNumberRulerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				9DE30B022209369F005AF2FC /* AppDelegate.swift */,
 				9DE30B2C22097477005AF2FC /* Model */,
+				9DE30B3A220A5B70005AF2FC /* Views */,
 				9DE30B292209745B005AF2FC /* UI Controllers */,
 				9DE30B2A2209746C005AF2FC /* CPU */,
 				9DE30B2B22097470005AF2FC /* Assembler */,
@@ -156,6 +159,14 @@
 				9DE30B38220A5311005AF2FC /* FlagsView.xib */,
 			);
 			path = XIBs;
+			sourceTree = "<group>";
+		};
+		9DE30B3A220A5B70005AF2FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9DE30B3B220A5BD3005AF2FC /* LineNumberRulerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 			files = (
 				9DE30B2422096E94005AF2FC /* Statement.swift in Sources */,
 				9DE30B2122096314005AF2FC /* Assembler.swift in Sources */,
+				9DE30B3C220A5BD3005AF2FC /* LineNumberRulerView.swift in Sources */,
 				9DE30B33220A466F005AF2FC /* DocumentController.swift in Sources */,
 				9DE30B052209369F005AF2FC /* Document.swift in Sources */,
 				9DE30B1B22095846005AF2FC /* Registers.swift in Sources */,
